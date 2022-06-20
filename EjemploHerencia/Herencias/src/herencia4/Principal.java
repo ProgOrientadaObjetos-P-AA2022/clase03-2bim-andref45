@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package herencia4;
 
 import herencia2.Docente;
@@ -29,18 +24,32 @@ public class Principal {
         listaDocentes.add(doc2);
         
         ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
-        // agregar elementos
-        
+        listaEstudiantes.add(est1);
+        listaEstudiantes.add(est2);
         
         ArrayList<Policia> listaPolicias = new ArrayList<>();
-        // agregar elementos
+        listaPolicias.add(pol1);
+        listaPolicias.add(pol2);
         
         
         ReporteDocente rd = new ReporteDocente("0001Doc");
-        
+        rd.establecerLista(listaDocentes);
+        for (int i = 0; i < listaDocentes.size(); i++) {
+            rd.establecerPromSueldos(); 
+        }
+       
         ReporteEstudiante re = new ReporteEstudiante("0001Est");
+        re.establecerLista(listaEstudiantes);
+        for (int i = 0; i < listaEstudiantes.size(); i++) {
+            re.establecerMatricula();
+        }
         
         ReportePolicia rp = new ReportePolicia("0001Pol");
+        rp.establecerLista(listaPolicias);
+        
+        for (int i = 0; i < listaPolicias.size(); i++) {
+            rp.establecerEdades();   
+        }
         
         System.out.println(rd);
         System.out.println(re);

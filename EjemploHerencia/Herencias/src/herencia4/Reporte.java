@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package herencia4;
 
 /**
@@ -11,4 +7,20 @@ package herencia4;
  */
 public class Reporte {
    protected String codigo;
+   
+   public Reporte (String cod){
+       codigo = cod;
+   }
+   public void establecerCod(String cod){
+       codigo = cod; 
+   }
+   public String obtenerCod(){
+       return codigo;
+   }
+   
+   @Override
+   public String toString(){
+       String cadena = String.format("%s\n", codigo);
+       return cadena;
+   }
 }
